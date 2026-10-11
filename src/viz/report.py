@@ -183,6 +183,7 @@ def generate_evaluation_report(cfg, conn):
     # Generate PDF if fpdf2 is installed
     if HAS_FPDF:
         try:
+            # 1. Evaluation Report PDF
             pdf = FPDF()
             pdf.add_page()
             pdf.set_font("Helvetica", "B", 16)
@@ -198,8 +199,25 @@ def generate_evaluation_report(cfg, conn):
                 for (strat, metric), val in df_metrics.groupby(["strategy", "metric_name"])["metric_value"].first().items():
                     pdf.cell(0, 5, f"{strat:<20} | {metric:<15} : {val:.4f}", ln=True)
             pdf.output(str(cfg.reports_dir / "evaluation_report.pdf"))
+
+            # 2. Macro Outlook PDF
+            outlook_path = cfg.reports_dir / "macro_outlook.md"
+            with open(outlook_path, "r", encoding="utf-8") as f:
+                outlook_content = f.read()
+
+            pdf_outlook = FPDF()
+            pdf_outlook.add_page()
+            pdf_outlook.set_font("Helvetica", "B", 16)
+            pdf_outlook.cell(0, 10, "Macroeconomic Outlook", ln=True, align="C")
+            pdf_outlook.ln(5)
+            pdf_outlook.set_font("Helvetica", size=10)
+            # Remove characters causing issues
+            clean_text = outlook_content.encode("ascii", "ignore").decode("ascii")
+            pdf_outlook.multi_cell(0, 6, clean_text)
+            pdf_outlook.output(str(cfg.reports_dir / "macro_outlook.pdf"))
+
         except Exception as e:
-            log.warning(f"Failed to generate PDF: {e}")
+            log.warning(f"Failed to generate PDFs: {e}")
 
 
 def run_reports(cfg, conn) -> None:
