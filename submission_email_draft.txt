@@ -1,0 +1,27 @@
+Subject: Submission: Quantitative Data Scientist Intern Assessment - Macroeconomic Event Ingestion Pipeline
+
+Hi Gilad,
+
+I have completed the Quant Data Scientist assessment task. The pipeline has been thoroughly hardened, verified for reproducibility, and validated under strict out-of-sample walk-forward evaluation.
+
+Repository Link:
+https://github.com/anomalyco/Macroeconomic_Event_Ingestion
+
+Scraper & Actor IDs:
+- Apify Actor ID: mstephen190/economic-calendar-scraper
+- Tavily News Search API: fed/inflation/jobs/interest rate queries
+- Optional Exa API: supported behind the `news.exa.enabled` configuration flag
+
+API Tokens (Please revoke after evaluation):
+- APIFY_TOKEN: <PROVIDED_SEPARATELY_VIA_SECURE_CHANNEL>
+- TAVILY_API_KEY: <PROVIDED_SEPARATELY_VIA_SECURE_CHANNEL>
+
+Key Deliverables:
+1. Evaluation Report: Detailed walk-forward metrics (Sharpe ratio with 95% bootstrap CI, Sortino, Max Drawdown %, Deflated Sharpe / statistical caveats) available in `reports/evaluation_report.md` and `reports/evaluation_report.pdf`.
+2. 1-Page Macro Outlook: Sourced from scraped events and news sentiments in `reports/macro_outlook.md`.
+3. Reproducibility & Code Quality: Verified across all stages using cached offline data and unit tests covering DST boundaries, numeric scaling, and point-in-time leakage prevention.
+
+Thank you for the opportunity to complete this assessment. I look forward to your feedback!
+
+Best regards,
+Tony Stark (Candidate)

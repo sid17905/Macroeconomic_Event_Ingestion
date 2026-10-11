@@ -1,0 +1,31 @@
+# ── Core data stack ─────────────────────────────────────────────────────
+pandas>=2.0.0
+numpy>=1.24.0
+PyYAML>=6.0
+python-dotenv>=1.0.0
+tenacity>=8.2.0
+requests>=2.31.0
+
+# Timezone database — REQUIRED on Windows for zoneinfo("America/New_York")
+tzdata>=2024.1
+
+# ── Ingestion ───────────────────────────────────────────────────────────
+apify-client>=1.7.0
+tavily-python>=0.5.0
+exa-py>=1.0.0
+vaderSentiment>=3.3.2
+
+# ── Market data / backtest ──────────────────────────────────────────────
+yfinance>=0.2.40
+
+# ── Modelling ───────────────────────────────────────────────────────────
+scikit-learn>=1.3.0
+lightgbm>=4.0.0       # auto-falls back to sklearn HistGradientBoosting if unavailable
+
+# ── Visualisation & reporting ───────────────────────────────────────────
+matplotlib>=3.7.0
+seaborn>=0.12.0
+fpdf2>=2.7.0          # optional: Markdown -> PDF for the evaluation report
+
+# ── Testing ─────────────────────────────────────────────────────────────
+pytest>=7.4.0

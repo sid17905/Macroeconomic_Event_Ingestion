@@ -1,0 +1,42 @@
+# ── Secrets — NEVER commit ──────────────────────────────────────────────
+.env
+*.env
+!.env.example
+
+# ── Data cache & database (regenerable; may be large or licensed) ───────
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/apify_events.json
+!data/raw/tavily_news.json
+!data/raw/extracted_task_brief.txt
+data/processed/*
+!data/processed/.gitkeep
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# ── Python ──────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# ── Unrelated / temporary files ────────────────────────────────────────
+Brain_Tumor_CNN_Colab.ipynb
+build_colab_notebook.py
+validate_notebook.py
+
+# ── OS / editor ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

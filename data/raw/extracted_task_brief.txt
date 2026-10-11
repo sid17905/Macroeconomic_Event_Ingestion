@@ -1,0 +1,43 @@
+CrowdWisdomTrading Macro economics agent
+Intern position assessment
+The document gives a brief introduction to an assignment to check your qualifications for the
+internship as a Quantitative Data Scientist. Please complete it on your own time and submit
+it within 1 week.
+Project Overview
+Create a Python-based machine learning pipeline that predicts the optimal trading strategy
+parameters (permutations) for a future period. The system will ingest historical trading logs,
+scrape macroeconomic event calendars, join the datasets in a database, and train a
+predictive model using rigorous out-of-sample validation.
+Technical Requirements
+https://apify.com/ - for data scraping (alternative data features)
+Project Scope
+Develop macro economic prediction model
+1. Macroeconomic Event Ingestion (Apify-based)
+- Scrape a macroeconomic calendar (CPI releases, FOMC announcements,
+employment reports) for the last 180 days using Apify.
+- Extract transaction timestamps (UTC/EST alignment), event names, actual values,
+and forecasted values.
+- most recent and relevant economic news (use tavily.com )
+2. Quantitative Feature Engineering & Macro summary
+- Feature Engineering: Create time-based features
+- 1 page summary of the macro economic outlook
+3. Machine Learning Model & Walk-Forward Validation
+- Build a predictive model to forecast expected trade P&L or win rate for each strategy
+permutation.
+4. Visual Matrix Output Generator
+- Charts that can visual the macro sentiment change as time changes
+Submission by email gilad@crowdwisdomtrading.com
+including apify/tavily/exa
+Submit the following:
+1. A link to your GitHub/GitLab repository.
+2. APIFY /tavily/exa tokens and actor IDs used for scraping (so we can reproduce your
+pipeline).
+3. An evaluation report (PDF or Markdown) detailing model performance metrics (Sharpe
+Ratio, Sortino Ratio, Max Drawdown).
+Timeline
+You will have 5 - 7 days to complete this task. Please ensure you submit the deliverables by
+the end of this period.
+We look forward to seeing your solution\!
+Thanks for applying!
+Gilad
+CrowdWisdomTrading CEO
